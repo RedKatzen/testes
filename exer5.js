@@ -2,7 +2,13 @@ var comprimento = 1
 var unidadeEntrada = "quilometro"
 var unidadeSaida = "polegada"
 
+var comprimento2 = 10
+var unidadeEntrada2 = "q"
+var unidadeSaida2 = "pe"
+
 function unidadeConversor(num, uniEntrada, uniSaida){
+    let unidadeCorreta = true
+
     switch(uniEntrada){
         case "metro":
             if(uniSaida === "pe"){
@@ -117,11 +123,19 @@ function unidadeConversor(num, uniEntrada, uniSaida){
             break;
 
         default:
-            console.log("VALOR INCORRETO")
+            unidadeCorreta = false
+            console.log("Não existe esta unidade de medida\n")
+            console.log("Estas são as unidades disponíveis:")
+            console.log("--quilometro\n--metro\n--centimetro\n--milimetro\n--milha\n--pe\n--polegada")
             break;
     }
-
-    return num + " " + uniSaida
+    if(unidadeCorreta == true){
+        return num + " " + uniSaida
+    } else {
+        return "\nERROR"
+    }
 }
 
 console.log(unidadeConversor(comprimento, unidadeEntrada, unidadeSaida))
+console.log("----------------------------------------------------")
+console.log(unidadeConversor(comprimento2, unidadeEntrada2, unidadeSaida2))
