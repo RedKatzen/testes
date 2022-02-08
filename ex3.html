@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var arrayNumeros = []
+
+        var qtd = prompt("Digite uma quantidade de números (pelo menos cinco):")
+        if(qtd < 2){
+            alert("O número digitado é menor que o pedido (ao menos cinco).")
+        } else {
+            for (let i = 0; i < qtd; i++) {
+                arrayNumeros.push(prompt("Digite um número:"))               
+            }
+        }
+
+        var ordem = prompt("Digite cres (crescente) ou dec (decrescente):")
+
+        function ordenador(arr){
+            switch (ordem){
+                case 'cres':
+                    arr.sort((a, b) => {
+                        if(a > b)
+                            return 1
+                        if(a < b)
+                            return -1
+                        else
+                            return 0
+                    })
+                    break;
+                case 'dec':
+                    arr.sort((a, b) => {
+                        if(a < b)
+                            return 1
+                        if(a > b)
+                            return -1
+                        else
+                            return 0
+                    })
+                    break;
+                default:
+                    console.log("ERROR")
+            }
+
+            return arr
+        }
+
+        alert(ordenador(arrayNumeros))
+    
+    </script>
+
+</body>
+</html>

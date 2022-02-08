@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var arrayNumeros = []
+
+        var qtd = prompt("Digite uma quantidade de números (pelo menos cinco):")
+        if(qtd < 5){
+            alert("O número digitado é menor que o pedido (ao menos cinco).")
+        } else {
+            for (let i = 0; i < qtd; i++) {
+                arrayNumeros.push(prompt("Digite um número:"))               
+            }
+        }
+
+        function ordenador(arr){
+            arr.sort((a, b) => a - b) 
+
+            return arr
+        }
+
+        alert(ordenador(arrayNumeros))
+
+    </script>
+
+</body>
+</html>
